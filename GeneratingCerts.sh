@@ -24,8 +24,8 @@ fi
 
 if [ ! -f "client.csr" ] && [ ! -f "server.csr" ]; then
     echo "Creating CSR for RSA server and client key"
-    openssl req -new -key server.key -out server.csr -subj "/C=IN/ST=KAr/L=BGL/O=INFY/OU=CISCO/CN=Server"
-    openssl req -new -key client.key -out client.csr -subj "/C=IN/ST=KAr/L=BGL/O=INFY/OU=CISCO/CN=Client"
+    openssl req -new -key server.key -out server.csr -subj "/C=IN/ST=KAr/L=BGL/O=BUSY/OU=BUSYO/CN=Server"
+    openssl req -new -key client.key -out client.csr -subj "/C=IN/ST=KAr/L=BGL/O=BUSY/OU=BUSYO/CN=Client"
 fi
 
 if [ ! -f "client.pem" ] && [ ! -f "server.pem" ]; then
@@ -45,8 +45,8 @@ fi
 if [ ! -f "clientEC.csr" ] && [ ! -f "serverEC.csr" ]; then
 
     echo "Creating CSR for EC server and client key"
-    openssl req -new -key serverEC.key -out serverEC.csr -subj "/C=AC/ST=KAREC/L=BGLEC/O=INFOSYS/OU=CISCEC/CN=serverEC"
-    openssl req -new -key clientEC.key -out clientEC.csr -subj "/C=AC/ST=KAREC/L=BGLEC/O=INFOSYS/OU=CISCEC/CN=clientEC"
+    openssl req -new -key serverEC.key -out serverEC.csr -subj "/C=AC/ST=KAREC/L=BGLEC/O=BUSY/OU=BUSYEC/CN=serverEC"
+    openssl req -new -key clientEC.key -out clientEC.csr -subj "/C=AC/ST=KAREC/L=BGLEC/O=BUSY/OU=BUSYEC/CN=clientEC"
 
     #Signing the EC Keys with Root cert
     echo "Signing the EC server and client CSR with root CA"
